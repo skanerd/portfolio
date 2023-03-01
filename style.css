@@ -1,0 +1,352 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+@font-face {
+  font-family: "enrico-pucci";
+  src: url(font/MPLUSRounded1c-Regular.woff);
+}
+@font-face {
+  font-family: "hitorigoto-sanpo";
+  src: url(font/KleeOne-Regular.woff);
+}
+@font-face {
+  font-family: "deep-shinjyuku";
+  src: url(font/RampartOne-Regular.woff);
+}
+@font-face {
+  font-family: "honne";
+  src: url(font/MochiyPopOne-Regular.woff);
+}
+@font-face {
+  font-family: "basterds";
+  src: url(font/RobotoCondensed-Regular.woff);
+}
+@font-face {
+  font-family: "Django";
+  src: url(font/OriginalDjangoDemo-Regular.woff);
+}
+
+/* reset */
+
+html {
+  background-color: rgba(1, 1, 1, 0.1);
+}
+li {
+  list-style: none;
+  transition: all 0.4s;
+  z-index: 15;
+}
+li:hover {
+  transform: scale(1.1);
+}
+li a {
+  border-bottom: 1px solid black;
+}
+a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #e95388;
+}
+h1 {
+  font-size: 50px;
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 10px;
+}
+h3 {
+  font-size: 30px;
+  font-family: "Dancing Script", cursive;
+  font-weight: lighter;
+}
+p {
+  margin-top: 30px;
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+}
+img {
+  width: 100%;
+  height: 100%;
+}
+
+/* font */
+
+.enrico-pucci {
+  font-family: "enrico-pucci";
+}
+.hitorigoto-sanpo {
+  font-family: "hitorigoto-sanpo";
+}
+.deep-shinjyuku {
+  font-family: "deep-shinjyuku";
+}
+.honne {
+  font-family: "honne";
+}
+.django {
+  font-family: "Django";
+}
+.basterds {
+  font-family: "basterds";
+}
+
+/* horizontal scroll */
+
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+}
+
+section {
+  min-width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.content {
+  width: 90%;
+  height: 80%;
+  display: flex;
+  flex-direction: row;
+}
+
+/* content 안 영역나누기 */
+
+.image {
+  width: 60%;
+}
+.information {
+  width: 40%;
+  padding: 2em;
+}
+
+/* media size */
+@media (max-width: 991px) {
+  .container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    transform: none !important;
+  }
+}
+
+/* navigation */
+
+.logo {
+  width: 80px;
+  height: 30px;
+  border: 1px solid black;
+  padding: 0 15px;
+}
+.logo img {
+  width: 100%;
+  height: 100%;
+}
+.main-nav {
+  position: fixed;
+  display: flex;
+  padding: 2em 4em;
+  z-index: 12;
+}
+.main-nav .ul-second {
+  position: fixed;
+  display: flex;
+  right: 4em;
+}
+.main-nav .ul-second li {
+  margin-left: 1.5em;
+}
+.main-nav .ul-second #border {
+  border: 1px solid black;
+  padding: 0 15px;
+  align-items: center;
+}
+.name {
+  font-size: 24px;
+}
+
+/* about me */
+
+/* skill */
+
+.progress {
+  width: 500px;
+  background: skyblue;
+}
+.my-progress p {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+.skill-info {
+  display: flex;
+  justify-content: space-around;
+}
+.progress-container {
+  margin-top: 5vh;
+  position: relative;
+  width: 150px;
+  display: flex;
+  justify-content: space-around;
+}
+.progress-container .card {
+  position: relative;
+  /* width:250px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* height:300px; */
+  border-radius: 4px;
+  text-align: center;
+  overflow: hidden;
+  transition: 0.5s;
+}
+.progress-container .card:hover {
+  transform: translateY(-10px);
+}
+.progress-container .card:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.03);
+  pointer-events: none;
+  z-index: 1;
+}
+.percent {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: #222;
+  z-index: 1000;
+}
+.percent .num {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+.percent .num h2 {
+  color: #777;
+  font-weight: 700;
+  font-size: 40px;
+  transition: 0.5s;
+}
+.card:hover .percent .num h2 {
+  color: #fff;
+  font-size: 60px;
+}
+.percent .num h2 span {
+  color: #777;
+  font-size: 24px;
+  transition: 0.5s;
+}
+.card:hover .percent .num h2 span {
+  color: #fff;
+}
+.text {
+  position: relative;
+  color: #777;
+  margin-top: 20px;
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: 0.5s;
+}
+.card:hover .text {
+  color: #fff;
+}
+svg {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  z-index: 1000;
+}
+svg circle {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: #191919;
+  stroke-width: 10;
+  stroke-linecap: round;
+  transform: translate(5px, 5px);
+}
+svg circle:nth-child(2) {
+  stroke-dasharray: 440;
+  stroke-dashoffset: 440;
+}
+.card:nth-child(1) svg circle:nth-child(2) {
+  stroke-dashoffset: calc(440 - (440 * 90) / 100);
+  stroke: black;
+}
+
+/* repository */
+
+.repository {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: space-around;
+  gap: 8px;
+}
+.repository-content {
+  width: 300px;
+}
+.repository-content a {
+  height: 80%;
+}
+.repository-content a img {
+  transition: all 0.4s;
+}
+.repository-content a img:hover {
+  transform: scale(1.05);
+}
+.repository-content img {
+  width: 100%;
+  height: 70%;
+  border: 3px black solid;
+}
+.repository-content p {
+  margin-top: 10px;
+}
+.repository-content span {
+  font-size: 18px;
+}
+
+/* contact me */
+
+.contact-me {
+  padding: 20px 0 0 80px;
+}
+.contact-me img {
+  width: 260px;
+  height: 60px;
+}
+.contact-me p {
+  margin: 0 auto 20px;
+}
+.contact-me a img {
+  transition: all 0.4s;
+}
+.contact-me a img:hover {
+  transform: scale(1.1);
+}
